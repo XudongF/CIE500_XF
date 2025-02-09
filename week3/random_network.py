@@ -22,8 +22,9 @@ for node_pair in combinations(list(pos.keys()), 2):
 
 ## Now, we can create the graph based on the positions and edge list.
 
-G = nx.from_edgelist(edge_list, create_using=nx.Graph)
+G = nx.from_edgelist(edge_list, create_using=nx.DiGraph)
 fig, ax = plt.subplots()
+
 nx.draw_networkx(G, pos=pos, with_labels=True, ax=ax)
 plt.tight_layout()
 ax.set_aspect("equal")  # set the equal scale of horizontal and vertical
